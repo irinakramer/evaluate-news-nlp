@@ -12,8 +12,9 @@ const fetch = require('node-fetch');
 
 const app = express();
 
-app.use(express.static('dist'));
 app.use(cors());
+app.use(express.static('dist'));
+
 
 // Middleware
 // Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
@@ -41,7 +42,9 @@ app.get('/test', function (req, res) {
 
 // POST method
 app.post('/article', async (req, res) => {
-    const response = await fetch(`${baseURL}&key=${API_KEY}&lang=auto&url=${req.body}`);
+    console.log(`${req.body}`);
+    const response = await fetch(`${baseURL}&key=${API_KEY}&lang=en&url=${req.body}`);
+    console.log(response);
     try {
         const data = await response.json();
         res.send(data);

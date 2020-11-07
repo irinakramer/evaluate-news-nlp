@@ -17,8 +17,7 @@ app.use(express.static('dist'));
 
 
 // Middleware
-// Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
-// body-parser is a middleware used for parsing the body from the request object during POST calls made to the server. Now your backend service will accept POST request with text in the request body.
+// Parse incoming request bodies in a middleware before your handlers, through req.body property.
 app.use(bodyParser.text());
 
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
@@ -42,9 +41,9 @@ app.get('/test', function (req, res) {
 
 // POST method
 app.post('/article', async (req, res) => {
-    console.log(`${req.body}`);
-    const response = await fetch(`${baseURL}&key=${API_KEY}&lang=en&url=${req.body}`);
-    console.log(response);
+    console.log(`req.body is ${req.body}`);
+    const response = await fetch(`${baseURL}?key=${API_KEY}&lang=auto&url=${req.body}`);
+    console.log('response url:', response);
     try {
         const data = await response.json();
         res.send(data);

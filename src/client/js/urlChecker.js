@@ -1,7 +1,7 @@
-function checkForName(inputText) {
+function checkForUrl(inputText) {
     console.log("::: Running checkForName :::", inputText);
     let regexp = /^(http|https):\/\/[^ "]+$/;
     return regexp.test(inputText);
 }
 
-export { checkForName }
+export { checkForUrl }

@@ -3,16 +3,16 @@ import { text } from 'body-parser';
 const fetch = require('node-fetch');
 
 /* Global variables */
-
 const errorEl = document.getElementById('error');
 
+/* Function to handle submit data and retrieve API data */
 async function handleSubmit(event) {
     event.preventDefault()
     let formText = document.getElementById('name').value;
     // check what text was put into the form field
-    console.log(Client.checkForName(formText));
+    console.log(Client.checkForUrl(formText));
 
-    if (Client.checkForName(formText)) {
+    if (Client.checkForUrl(formText)) {
         await fetch('http://localhost:8081/article', {
             method: 'POST',
             cache: 'no-cache',
@@ -38,7 +38,7 @@ async function handleSubmit(event) {
 }
 
 /* Function to Update UI */
-const updateUI = async (res) => {
+const updateUI = (res) => {
     // find DOM elements
     const resultsEl = document.getElementById('results');
     const urlEl = document.getElementById('url');

@@ -32,9 +32,6 @@ async function handleSubmit(event) {
         errorEl.innerHTML = 'Invalid URL. Please make sure the URL starts with http:// or https:// and has no spaces.'
         console.log('invalid url');
     }
-
-
-
 }
 
 /* Function to Update UI */
@@ -85,4 +82,4 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export { handleSubmit }
+export { handleSubmit, scoreValue }

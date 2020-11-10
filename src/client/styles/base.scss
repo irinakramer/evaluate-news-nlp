@@ -19,8 +19,7 @@ main {
 a {
     color: #ffffff;
     &:hover,
-    &:active,
-    &:visited
+    &:active
     {
         color:#30DFF2;
     }
@@ -52,12 +51,6 @@ h2 {
     p {
         margin: 0 0 0.5rem;
     }
-}
-
-footer {
-    text-align: center;
-    font-size: .8rem;
-    padding: 1rem;
 }
 
 @media only screen and (max-width: 600px) {

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title>Evaluate News with nlp</title>
     <link rel="stylesheet" href="/styles/resets.css">
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/header.css">
@@ -14,37 +14,46 @@
 <body>
 
     <header>
-        <div class="">
-            Logo
+        <div class="logo">
+            <img src="images/logo.png" alt="">
         </div>
         <div class="">
-            navigation
+            <ul class="menu">
+                <li><a href="http://www.irinakramer.com"><i class="fas fa-home"></i></a></li>
+                <li><a href="https://github.com/irinakramer"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/irinakramer/"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
         </div>
     </header>
 
     <main>
-        <section>
+        <section class="input">
+            <h1>Evaluate News with NLP</h1>
             <form class="" onsubmit="return Client.handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Article URL">
+                <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)"
                     onsubmit="return Client.handleSubmit(event)">
             </form>
-            <section>
+        </section>
 
-                <section>
-                    <strong>Form Results:</strong>
-                    <div id="error"></div>
-                    <div id="results"></div>
-                    <div id="url"></div>
-                    <div id="score"></div>
-                    <div id="subjectivity"></div>
-                    <div id="irony"></div>
-                    <div id="text"></div>
-                </section>
+        <section class="output">
+            <div class="results">
+                <h2>Evaluation Results:</h2>
+                <p id="error"></p>
+                <p id="results"></p>
+                <p id="url"></p>
+                <p id="score"></p>
+                <p id="subjectivity"></p>
+                <p id="irony"></p>
+                <p id="text"></p>
+            </div>
+
+        </section>
     </main>
 
     <footer>
-        <p>This is a footer</p>
+        <p>Udacity Front End Web Developer nanodegree</p>
+        <p>Project by <a href="http://www.irinakramer.com" target="_blank">Irina Kramer</a></p>
     </footer>
 
 </body>

@@ -4,10 +4,21 @@ const fetch = require('node-fetch');
 
 /* Global variables */
 const errorEl = document.getElementById('error');
+const scoreEl = document.getElementById('score');
+const subjectivityEl = document.getElementById('subjectivity');
+const ironyEl = document.getElementById('irony');
+const textEl = document.getElementById('text');
 
 /* Function to handle submit data and retrieve API data */
 async function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
+
+    // clear results from previous submit
+    scoreEl.innerHTML = '';
+    subjectivityEl.innerHTML = '';
+    ironyEl.innerHTML = '';
+    textEl.innerHTML = '';
+
     let formText = document.getElementById('name').value;
     // check what text was put into the form field
     console.log(Client.checkForUrl(formText));
@@ -29,27 +40,20 @@ async function handleSubmit(event) {
             })
 
     } else {
-        errorEl.innerHTML = 'Invalid URL. Please make sure the URL starts with http:// or https:// and has no spaces.'
+        errorEl.innerHTML = 'Invalid URL. Please make sure the URL starts with http:// or https:// and has no spaces.';
+        errorEl.classList.add('error');
         console.log('invalid url');
     }
 }
 
 /* Function to Update UI */
 const updateUI = (res) => {
-    // find DOM elements
-    const resultsEl = document.getElementById('results');
-    const urlEl = document.getElementById('url');
-    const scoreEl = document.getElementById('score');
-    const subjectivityEl = document.getElementById('subjectivity');
-    const ironyEl = document.getElementById('irony');
-    const textEl = document.getElementById('text');
 
     // clear error msg
     errorEl.innerHTML = '';
+    errorEl.classList.remove('error');
 
     // insert API results
-    resultsEl.innerHTML = `API Status: ${capitalizeFirstLetter(res.status.msg)}`;
-    urlEl.innerHTML = `URL: ${document.getElementById('name').value}`;
     scoreEl.innerHTML = `Sentiment Score: ${scoreValue(res.score_tag)}`;
     subjectivityEl.innerHTML = `Subjectivity: ${capitalizeFirstLetter(res.subjectivity)}`;
     ironyEl.innerHTML = `Irony: ${capitalizeFirstLetter(res.irony)}`;

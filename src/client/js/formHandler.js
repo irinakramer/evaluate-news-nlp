@@ -20,9 +20,8 @@ async function handleSubmit(event) {
     textEl.innerHTML = '';
 
     let formText = document.getElementById('name').value;
-    // check what text was put into the form field
-    console.log(Client.checkForUrl(formText));
 
+    // check if user input is valid
     if (Client.checkForUrl(formText)) {
         await fetch('http://localhost:8081/article', {
             method: 'POST',
@@ -40,6 +39,7 @@ async function handleSubmit(event) {
             })
 
     } else {
+        // output error message
         errorEl.innerHTML = 'Invalid URL. Please make sure the URL starts with http:// or https:// and has no spaces.';
         errorEl.classList.add('error');
         console.log('invalid url');

@@ -41,7 +41,6 @@ app.get('/test', function (req, res) {
 
 // POST method
 app.post('/article', async (req, res) => {
-    console.log(`req.body is ${req.body}`);
     const response = await fetch(`${baseURL}?key=${API_KEY}&lang=auto&url=${req.body}`);
     console.log('response url:', response);
     try {
@@ -52,6 +51,3 @@ app.post('/article', async (req, res) => {
     }
 });
 
-
-
-console.log(`Your API key is ${process.env.API_KEY}`);

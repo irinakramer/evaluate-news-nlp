@@ -9,8 +9,6 @@ import './styles/header.scss'
 import './styles/message.scss'
 import './images/logo.png'
 
-console.log("client js: working");
-
 export {
     checkForUrl,
     handleSubmit

@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 });
 
 // designates what port the app will listen to for incoming requests
-app.listen(port, function () {
+app.listen(process.env.PORT || port, function () {
     console.log(`Example app listening on port ${port}!`)
 });
 
@@ -40,7 +40,7 @@ app.get('/test', function (req, res) {
 });
 
 // POST method
-app.post('article', async (req, res) => {
+app.post('/article', async (req, res) => {
     const response = await fetch(`${baseURL}?key=${API_KEY}&lang=auto&url=${req.body}`);
     console.log('response url:', response);
     try {

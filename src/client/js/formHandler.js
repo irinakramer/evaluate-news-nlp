@@ -23,7 +23,7 @@ async function handleSubmit(event) {
 
     // check if user input is valid
     if (Client.checkForUrl(formText)) {
-        await fetch('article', {
+        await fetch('/article', {
             method: 'POST',
             cache: 'no-cache',
             credentials: 'same-origin',

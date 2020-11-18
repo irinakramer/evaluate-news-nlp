@@ -40,7 +40,7 @@ app.get('/test', function (req, res) {
 });
 
 // POST method
-app.post('/article', async (req, res) => {
+app.post('article', async (req, res) => {
     const response = await fetch(`${baseURL}?key=${API_KEY}&lang=auto&url=${req.body}`);
     console.log('response url:', response);
     try {

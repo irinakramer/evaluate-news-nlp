@@ -25,12 +25,12 @@ const port = 8081;
 
 console.log(__dirname);
 
-app.get('https://quiet-shelf-86914.herokuapp.com/', function (req, res) {
-    res.sendFile('dist/index.html')
-});
-// app.get('/', function (req, res) {
+// app.get('https://quiet-shelf-86914.herokuapp.com/', function (req, res) {
 //     res.sendFile('dist/index.html')
 // });
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html')
+});
 
 
 

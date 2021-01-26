@@ -25,9 +25,14 @@ const port = 8081;
 
 console.log(__dirname);
 
-app.get('/', function (req, res) {
+app.get('https://quiet-shelf-86914.herokuapp.com/', function (req, res) {
     res.sendFile('dist/index.html')
 });
+// app.get('/', function (req, res) {
+//     res.sendFile('dist/index.html')
+// });
+
+
 
 // designates what port the app will listen to for incoming requests
 app.listen(process.env.PORT || port, function () {

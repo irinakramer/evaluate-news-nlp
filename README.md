@@ -47,5 +47,10 @@ Navigate to http://localhost:8080/ in your browser.
 To use the app, enter a URL in the input field and press the **Submit** button. Sentiment results will be displayed in the box below. If a URL is invalid, the user will see an error message. The app is fully responsive.
 
 
+## Demo
+
+![Evaluate News App screenshot](/src/client/images/evaluate-news-screenshot.png?raw=true "Evaluate News NLP")
+
+
 ## Author
 Code is created by Irina Kramer, using starter code by Udacity.

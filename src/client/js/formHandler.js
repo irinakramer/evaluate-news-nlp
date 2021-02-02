@@ -23,7 +23,7 @@ async function handleSubmit(event) {
 
     // check if user input is valid
     if (Client.checkForUrl(formText)) {
-        await fetch('http://localhost:8081/article', {
+        await fetch('https://evaluate-news-86914.herokuapp.com/article', {
             method: 'POST',
             cache: 'no-cache',
             credentials: 'same-origin',

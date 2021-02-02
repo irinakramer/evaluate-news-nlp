@@ -21,7 +21,7 @@ app.use(express.static('dist'));
 app.use(bodyParser.text());
 
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
-const port = 8081;
+//const port = 8081;
 
 console.log(__dirname);
 
@@ -33,9 +33,17 @@ app.get('/', function (req, res) {
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(process.env.PORT || port, function () {
-    console.log(`Example app listening on port ${port}!`)
+// app.listen(process.env.PORT || port, function () {
+//     console.log(`Example app listening on port ${port}!`)
+// });
+
+const server = app.listen(process.env.PORT || 8081, function () {
+    const port = server.address().port;
+    console.log("App now running on port", port);
 });
+
+
+
 
 // test api
 app.get('/test', function (req, res) {
